@@ -5,20 +5,20 @@
   
 
   
-  <title>Debain版本 | 进击的菜鸟</title>
+  <title>linux 启动流程 | 进击的菜鸟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Debian 一个Linux发行版Debian的前世今生Debian名字的由来—-DebianGNU/Linux是由一个叫做伊恩·默多克（IanMurdock）在1993年发起的，他的名字以Ian开头，他太太的名字Debra开头三个字母是Deb。Debian是社区类Linux的典范，是迄今为止最遵循GNU规范的Linux系统。Debian最早由 Ian Murdock于1993年创建，分为三个版本">
+  <meta name="description" content="Linux 下的服务service 和 daemon SysV init 脚本  /etc/init.d 目录下shell 脚本常见的缺点就是，慢、可读性不强、太详细又很傲娇 /etc/rc.d/rc.d  ———&amp;gt;  /etc/init.d/rc0-6 7个运行级别 rc.localrcS.d/ who -r  或 runlevel  查看运行级别  Systemd serivice  一">
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Debain版本">
-<meta property="og:url" content="http://yoursite.com/2019/07/14/Debain版本/index.html">
+<meta property="og:title" content="linux 启动流程">
+<meta property="og:url" content="http://yoursite.com/2019/07/16/linux-启动流程/index.html">
 <meta property="og:site_name" content="进击的菜鸟">
-<meta property="og:description" content="Debian 一个Linux发行版Debian的前世今生Debian名字的由来—-DebianGNU/Linux是由一个叫做伊恩·默多克（IanMurdock）在1993年发起的，他的名字以Ian开头，他太太的名字Debra开头三个字母是Deb。Debian是社区类Linux的典范，是迄今为止最遵循GNU规范的Linux系统。Debian最早由 Ian Murdock于1993年创建，分为三个版本">
+<meta property="og:description" content="Linux 下的服务service 和 daemon SysV init 脚本  /etc/init.d 目录下shell 脚本常见的缺点就是，慢、可读性不强、太详细又很傲娇 /etc/rc.d/rc.d  ———&amp;gt;  /etc/init.d/rc0-6 7个运行级别 rc.localrcS.d/ who -r  或 runlevel  查看运行级别  Systemd serivice  一">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-14T02:13:31.863Z">
+<meta property="og:updated_time" content="2019-07-16T07:07:37.458Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Debain版本">
-<meta name="twitter:description" content="Debian 一个Linux发行版Debian的前世今生Debian名字的由来—-DebianGNU/Linux是由一个叫做伊恩·默多克（IanMurdock）在1993年发起的，他的名字以Ian开头，他太太的名字Debra开头三个字母是Deb。Debian是社区类Linux的典范，是迄今为止最遵循GNU规范的Linux系统。Debian最早由 Ian Murdock于1993年创建，分为三个版本">
+<meta name="twitter:title" content="linux 启动流程">
+<meta name="twitter:description" content="Linux 下的服务service 和 daemon SysV init 脚本  /etc/init.d 目录下shell 脚本常见的缺点就是，慢、可读性不强、太详细又很傲娇 /etc/rc.d/rc.d  ———&amp;gt;  /etc/init.d/rc0-6 7个运行级别 rc.localrcS.d/ who -r  或 runlevel  查看运行级别  Systemd serivice  一">
   
     <link rel="alternate" href="/atom.xml" title="进击的菜鸟" type="application/atom+xml">
   
@@ -65,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Debain版本" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-linux-启动流程" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/14/Debain版本/" class="article-date">
-  <time datetime="2019-07-14T02:00:37.000Z" itemprop="datePublished">2019-07-14</time>
+    <a href="/2019/07/16/linux-启动流程/" class="article-date">
+  <time datetime="2019-07-16T06:33:44.000Z" itemprop="datePublished">2019-07-16</time>
 </a>
     
   <div class="article-category">
@@ -83,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Debain版本
+      linux 启动流程
     </h1>
   
 
@@ -91,13 +91,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Debian-一个Linux发行版"><a href="#Debian-一个Linux发行版" class="headerlink" title="Debian 一个Linux发行版"></a>Debian 一个Linux发行版</h1><h2 id="Debian的前世今生"><a href="#Debian的前世今生" class="headerlink" title="Debian的前世今生"></a>Debian的前世今生</h2><p>Debian名字的由来—-DebianGNU/Linux是由一个叫做伊恩·默多克（IanMurdock）在1993年发起的，他的名字以Ian开头，他太太的名字Debra开头三个字母是Deb。<br>Debian是社区类Linux的典范，是迄今为止最遵循GNU规范的Linux系统。<br>Debian最早由 Ian Murdock于1993年创建，分为三个版本分支： stable(服务器版), testing(稳定版) 和unstable(测试版)。</p>
-<h2 id="Debian的命名"><a href="#Debian的命名" class="headerlink" title="Debian的命名"></a>Debian的命名</h2><p>Debian 起源于1993年8月16日，由Ian Murdock创建（Debian History）。<br>每一代的版本代号（codename）是以玩具总动员（Toy Story）的成员命名的。<br>详细见<a href="https://www.debian.org/releases/" target="_blank" rel="noopener">Debian官网</a></p>
+        <h2 id="Linux-下的服务"><a href="#Linux-下的服务" class="headerlink" title="Linux 下的服务"></a>Linux 下的服务</h2><h3 id="service-和-daemon"><a href="#service-和-daemon" class="headerlink" title="service 和 daemon"></a>service 和 daemon</h3><ol>
+<li>SysV init 脚本</li>
+</ol>
+<p>/etc/init.d 目录下<br>shell 脚本常见的缺点就是，慢、可读性不强、太详细又很傲娇</p>
+<p>/etc/rc.d/rc<em>.d  ———&gt;  /etc/init.d/rc</em><br>0-6 7个运行级别</p>
+<p>rc.local<br>rcS.d/</p>
+<p>who -r  或 runlevel  查看运行级别</p>
+<ol start="2">
+<li>Systemd serivice</li>
+</ol>
+<p>一种以 .service 结尾的单元（unit）配置文件，<br>用于控制由 systemd 控制或监视的进程。<br>简单说，用于后台以守护精灵（daemon）的形式运行程序<br>服务文件放到<br>/etc/systemd/system（供系统管理员和用户使用），<br>/usr/lib/systemd/system（供发行版打包者使用）</p>
+<p><a href="https://blog.csdn.net/djskl/article/details/46671453" target="_blank" rel="noopener">文件解释</a></p>
+<p>chkconfig ntsysv 管理工具</p>
+<p>service –status-all   查看所有服务</p>
+<ol start="3">
+<li></li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/Debain版本/" data-id="ck4dqmnrn000fngcoqxypiwxq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/16/linux-启动流程/" data-id="ck4dqmnqn0004ngcork3m70iy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -108,19 +123,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/07/14/Linux-查看版本/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/19/设置终端代理/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Linux 查看版本
+          设置终端代理
         
       </div>
     </a>
   
   
-    <a href="/2019/07/13/hexo-常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/07/16/linux-编译安装opencv/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">hexo 常用命令</div>
+      <div class="article-nav-title">linux 编译安装opencv</div>
     </a>
   
 </nav>

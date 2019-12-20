@@ -62,6 +62,201 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-设置终端代理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/19/设置终端代理/" class="article-date">
+  <time datetime="2019-07-19T03:11:52.000Z" itemprop="datePublished">2019-07-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/随笔/">随笔</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/19/设置终端代理/">设置终端代理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="终端设置代理"><a href="#终端设置代理" class="headerlink" title="终端设置代理"></a>终端设置代理</h1><h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><ol>
+<li>http<br>set http_proxy=<a href="http://127.0.0.1:8118" target="_blank" rel="noopener">http://127.0.0.1:8118</a><br>set https_proxy=<a href="http://127.0.0.1:8118" target="_blank" rel="noopener">http://127.0.0.1:8118</a></li>
+<li>socks5<br>set http_proxy=socks5://127.0.0.1:1080<br>set https_proxy=socks5://127.0.0.1:1080</li>
+<li>set http_proxy=</li>
+</ol>
+<h2 id="Linux-代理"><a href="#Linux-代理" class="headerlink" title="Linux 代理"></a>Linux 代理</h2><ol>
+<li>http<br>export http_proxy=<a href="http://127.0.0.1:8118" target="_blank" rel="noopener">http://127.0.0.1:8118</a><br>export https_proxy=<a href="http://127.0.0.1:8118" target="_blank" rel="noopener">http://127.0.0.1:8118</a></li>
+<li>socks5<br>export http_proxy=socks5://127.0.0.1:1080<br>export https_proxy=socks5://127.0.0.1:1080</li>
+<li>终端中的 wget、curl 等都走 SOCKS5 代理<br>export ALL_PROXY=socks5://127.0.0.1:1080</li>
+<li>unset http_proxy</li>
+</ol>
+<h2 id="Git-代理"><a href="#Git-代理" class="headerlink" title="Git 代理"></a>Git 代理</h2><ol>
+<li>HTTP<br>git config –global http.proxy <a href="http://127.0.0.1:8118" target="_blank" rel="noopener">http://127.0.0.1:8118</a><br>git config –global https.proxy <a href="http://127.0.0.1:8118" target="_blank" rel="noopener">http://127.0.0.1:8118</a></li>
+<li>SOCKS5<br>git config –global http.proxy socks5://127.0.0.1:1080<br>git config –global https.proxy socks5://127.0.0.1:1080</li>
+<li>取消<br>git config –global –unset http.proxy<br>git config –global –unset https.proxy</li>
+</ol>
+<h2 id="pip-设置代理"><a href="#pip-设置代理" class="headerlink" title="pip 设置代理"></a>pip 设置代理</h2><p>pip install -r requirements.txt –proxy=代理服务器IP:端口号</p>
+<h2 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h2><p>curl -o home.html  <a href="http://www.sina.com.cn" target="_blank" rel="noopener">http://www.sina.com.cn</a></p>
+<p>curl -O <a href="http://www.mydomain.com/linux/index.html" target="_blank" rel="noopener">http://www.mydomain.com/linux/index.html</a></p>
+<p>curl -x 10.10.90.83:80 -o home.html <a href="http://www.sina.com.cn" target="_blank" rel="noopener">http://www.sina.com.cn</a></p>
+<p>curl -e <a href="http://localhost" target="_blank" rel="noopener">http://localhost</a> <a href="http://www.sina.com.cn" target="_blank" rel="noopener">http://www.sina.com.cn</a> 伪造来源地址</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/19/设置终端代理/" data-id="ck4dqmnrr000ingcocfjh8wii" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tips/">tips</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux-启动流程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/16/linux-启动流程/" class="article-date">
+  <time datetime="2019-07-16T06:33:44.000Z" itemprop="datePublished">2019-07-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/随笔/">随笔</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/16/linux-启动流程/">linux 启动流程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Linux-下的服务"><a href="#Linux-下的服务" class="headerlink" title="Linux 下的服务"></a>Linux 下的服务</h2><h3 id="service-和-daemon"><a href="#service-和-daemon" class="headerlink" title="service 和 daemon"></a>service 和 daemon</h3><ol>
+<li>SysV init 脚本</li>
+</ol>
+<p>/etc/init.d 目录下<br>shell 脚本常见的缺点就是，慢、可读性不强、太详细又很傲娇</p>
+<p>/etc/rc.d/rc<em>.d  ———&gt;  /etc/init.d/rc</em><br>0-6 7个运行级别</p>
+<p>rc.local<br>rcS.d/</p>
+<p>who -r  或 runlevel  查看运行级别</p>
+<ol start="2">
+<li>Systemd serivice</li>
+</ol>
+<p>一种以 .service 结尾的单元（unit）配置文件，<br>用于控制由 systemd 控制或监视的进程。<br>简单说，用于后台以守护精灵（daemon）的形式运行程序<br>服务文件放到<br>/etc/systemd/system（供系统管理员和用户使用），<br>/usr/lib/systemd/system（供发行版打包者使用）</p>
+<p><a href="https://blog.csdn.net/djskl/article/details/46671453" target="_blank" rel="noopener">文件解释</a></p>
+<p>chkconfig ntsysv 管理工具</p>
+<p>service –status-all   查看所有服务</p>
+<ol start="3">
+<li></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/16/linux-启动流程/" data-id="ck4dqmnqn0004ngcork3m70iy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux-编译安装opencv" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/16/linux-编译安装opencv/" class="article-date">
+  <time datetime="2019-07-16T03:54:58.000Z" itemprop="datePublished">2019-07-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/随笔/">随笔</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/16/linux-编译安装opencv/">linux 编译安装opencv</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Linux-编译OpenCV"><a href="#Linux-编译OpenCV" class="headerlink" title="Linux 编译OpenCV"></a>Linux 编译OpenCV</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
+<li>安装类库<br>sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev</li>
+</ol>
+<p>sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev</p>
+<ol start="2">
+<li>cmake</li>
+</ol>
+<p>cmake  -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local -DOPENCV_GENERATE_PKGCONFIG=ON ..</p>
+<p>最后一个参数会生成 /usr/local/lib/pkgconfig</p>
+<ol start="3">
+<li><p>编译<br>make -j8</p>
+</li>
+<li><p>安装<br>make install</p>
+</li>
+</ol>
+<h3 id="pkgconfig-运行"><a href="#pkgconfig-运行" class="headerlink" title="pkgconfig 运行"></a>pkgconfig 运行</h3><p>默认情况,pkg-config首先在 /usr/lib/pkgconfig/ /usr/local/lib/pkgconfig 查找xxx.pc<br>没有的话在 PKG_CONFIG_PATH</p>
+<p>pkg-config –libs –cflags opencv<br>查看gcc的CFLAGS参数</p>
+<h3 id="Linux-变量"><a href="#Linux-变量" class="headerlink" title="Linux 变量"></a>Linux 变量</h3><p>C_INCLUDE_PATH      C 头文件<br>CPLUS_INCLUDE_PATH  C++ 头文件<br>LD_LIBRARY_PATH     动态链接库路径<br>LIBRARY_PATH        静态库的路径</p>
+<h3 id="运行opencv"><a href="#运行opencv" class="headerlink" title="运行opencv"></a>运行opencv</h3><ol>
+<li>直接指定 -I —L -l<br>g++ test.cpp -I /usr/local/include/opencv4 -lopencv_features2d -lopencv_calib3d -opencv_imgproc -lopencv_core -lopencv_highgui -lopencv_imgcodecs -o test</li>
+</ol>
+<p>缺少lib可以用下面的方法<br>nm -A lib64/libopencv*.a |grep “头文件”</p>
+<ol start="2">
+<li><p>pkg-config<br>pkg-config –help<br>pkg-config –modversion opencv4<br>g++ test.cpp <code>pkg-config --libs --cflags opencv4</code><br>生成a.out</p>
+</li>
+<li><p>cmake   CMakeList.txt<br>cmake_minimum_required(VERSION 2.8)<br>project(opencv)<br>set(OpneCV_DIR /path/to/opencv-x86/)<br>find_package(OpenCV REQUIRED)<br>add_executable(opencv try.cpp)<br>target_link_libraries(opencv ${OpenCV_LIBS})</p>
+</li>
+<li><p>动态链接库<br>/etc/ld.so.conf<br>include /etc/ld.so.conf.d/*.conf</p>
+</li>
+</ol>
+<p>sudo ldconfig  </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/16/linux-编译安装opencv/" data-id="ck4dqmnro000gngco8smum5nw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Linux-查看版本" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/07/14/Linux-查看版本/" class="article-date">
@@ -105,7 +300,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/Linux-查看版本/" data-id="cjy2ss0xv0004kkcoka70r46c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/Linux-查看版本/" data-id="ck4dqmnqj0001ngcoflvy2h62" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -149,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/Debain版本/" data-id="cjy2ss0xk0000kkcokzknyucl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/Debain版本/" data-id="ck4dqmnrn000fngcoqxypiwxq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -198,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/13/hexo-常用命令/" data-id="cjy2ss0xr0001kkco9sso3knx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/13/hexo-常用命令/" data-id="ck4dqmnqe0000ngcopcf2yqxj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -230,7 +425,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a></li></ul>
     </div>
   </div>
 
@@ -240,7 +435,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a>
+      <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a>
     </div>
   </div>
 
@@ -262,15 +457,23 @@
       <ul>
         
           <li>
+            <a href="/2019/07/19/设置终端代理/">设置终端代理</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/16/linux-启动流程/">linux 启动流程</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/16/linux-编译安装opencv/">linux 编译安装opencv</a>
+          </li>
+        
+          <li>
             <a href="/2019/07/14/Linux-查看版本/">Linux 查看版本</a>
           </li>
         
           <li>
             <a href="/2019/07/14/Debain版本/">Debain版本</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/13/hexo-常用命令/">hexo 常用命令</a>
           </li>
         
       </ul>
